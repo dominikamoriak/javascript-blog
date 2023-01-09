@@ -23,7 +23,7 @@ function titleClickHandler(event){
 
   /* [DONE] remove class 'active' from all articles */
 
-  const activeArticles = document.querySelectorAll('.posts active');
+  const activeArticles = document.querySelectorAll('.posts .active');
 
   for(let activeArticle of activeArticles){
     activeArticle.classList.remove('active');
@@ -36,7 +36,7 @@ function titleClickHandler(event){
 
   /* find the correct article using the selector (value of 'href' attribute) */
 
-  const targetArticle = document.querySelector('href');
+  const targetArticle = document.querySelector(articleSelector);
   console.log(targetArticle);
 
   /* add class 'active' to the correct article */
