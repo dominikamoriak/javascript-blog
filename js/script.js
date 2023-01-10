@@ -70,6 +70,9 @@ function generateTitleLinks(){
 
     /* get the article id */
 
+    const articleId = optArticleSelector.getAttribute('article-1');
+    console.log(articleId);
+
     /* find the title element */
 
     /* get the title from the title element */
