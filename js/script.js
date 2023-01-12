@@ -1,9 +1,9 @@
 'use strict';
 
 function titleClickHandler(event){
-    event.preventDefault();
+  event.preventDefault();
 
-    const clickedElement = this;
+  const clickedElement = this;
   console.log('Link was clicked!');
   console.log(event);
 
@@ -46,40 +46,40 @@ const optArticleSelector = '.post',
 function generateTitleLinks(){
 
   /* remove contents of titleList */
-    const titleList = document.querySelector(optTitleListSelector);
-    titleList.innerHTML = '';
+  const titleList = document.querySelector(optTitleListSelector);
+  titleList.innerHTML = '';
 
   /* for each article */
-    let html = '';
+  let html = '';
 
-    const articles = document.querySelectorAll(optArticleSelector);
-    for(let article of articles){
+  const articles = document.querySelectorAll(optArticleSelector);
+  for(let article of articles){
 
-        /* get the article id */
-        const articleId = article.getAttribute('id');
-        console.log(articleId);
+    /* get the article id */
+    const articleId = article.getAttribute('id');
+    console.log(articleId);
 
-        /* find the title element */
-        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+    /* find the title element */
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
-        /* get the title from the title element */
+    /* get the title from the title element */
 
-        /* create HTML of the link */
-        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-        console.log(linkHTML);
+    /* create HTML of the link */
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log(linkHTML);
 
-        /* insert link into titleList, HTML variable */
-        html = html + linkHTML;
-        console.log(html);
-    }
-    titleList.innerHTML = html;
+    /* insert link into titleList, HTML variable */
+    html = html + linkHTML;
+    console.log(html);
+  }
+  titleList.innerHTML = html;
 
-const links = document.querySelectorAll('.titles a');
-console.log(links);
+  const links = document.querySelectorAll('.titles a');
+  console.log(links);
 
-for(let link of links){
-link.addEventListener('click', titleClickHandler);
-}
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 generateTitleLinks();
