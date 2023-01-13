@@ -87,6 +87,8 @@ generateTitleLinks();
 
 function generateTags(){
   /* find all articles */
+  const articles = document.querySelectorAll(optArticleTagsSelector);
+  console.log(articles);
 
   /* START LOOP: for every article: */
 
@@ -112,3 +114,4 @@ function generateTags(){
 }
 
 generateTags();
+
