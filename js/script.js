@@ -92,8 +92,6 @@ function generateTags(){
   console.log(articles);
 
   /* START LOOP: for every article: */
-  let html = '';
-
   const article = document.querySelectorAll(optArticleSelector);
   for(let article of articles){
 
@@ -102,6 +100,7 @@ function generateTags(){
     console.log(titleList);
 
     /* make html variable with empty string */
+    let html = '';
 
     /* get tags from data-tags attribute */
 
