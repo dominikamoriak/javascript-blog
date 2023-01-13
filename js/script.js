@@ -42,7 +42,7 @@ function titleClickHandler(event){
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
-optArticleTagsSelector = '.post-tags .list'
+  optArticleTagsSelector = '.post-tags .list'
 
 function generateTitleLinks(){
 
@@ -98,23 +98,25 @@ function generateTags(){
   for(let article of articles){
 
     /* find tags wrapper */
+    const titleList = article.querySelectorAll(optArticleTagsSelector);
+    console.log(titleList);
 
     /* make html variable with empty string */
 
     /* get tags from data-tags attribute */
 
     /* split tags into array */
+  }
+  /* START LOOP: for each tag */
 
-    /* START LOOP: for each tag */
+  /* generate HTML of the link */
 
-    /* generate HTML of the link */
+  /* add generated code to html variable */
 
-    /* add generated code to html variable */
-
-    /* END LOOP: for each tag */
+  /* END LOOP: for each tag */
 
   /* insert HTML of all the links into the tags wrapper */
-  }
+
   /* END LOOP: for every article: */
 }
 
