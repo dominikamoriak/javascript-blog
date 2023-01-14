@@ -109,7 +109,7 @@ function generateTags(){
     /* split tags into array */
     const articleTagsArray = articleTags.split(' ');
     console.log(articleTagsArray);
-  }
+
   /* START LOOP: for each tag */
   for(let tag of articleTagsArray){
     console.log(tag);
@@ -123,10 +123,6 @@ function generateTags(){
     console.log(html);
 
     /* END LOOP: for each tag */
-    let html = '';
-
-    const tag = article.querySelectorAll(optArticleTagsSelector);
-    console.log(tag);
   }
   /* insert HTML of all the links into the tags wrapper */
   html = html + linkHTML;
@@ -134,8 +130,6 @@ function generateTags(){
 
   /* END LOOP: for every article: */
 
-
 }
 
 generateTags();
-
