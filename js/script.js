@@ -123,6 +123,10 @@ function generateTags(){
     console.log(html);
 
     /* END LOOP: for each tag */
+    let html = '';
+
+    const tag = article.querySelectorAll(optArticleTagsSelector);
+    console.log(tag);
   }
   /* insert HTML of all the links into the tags wrapper */
 
