@@ -110,26 +110,26 @@ function generateTags(){
     const articleTagsArray = articleTags.split(' ');
     console.log(articleTagsArray);
 
-  /* START LOOP: for each tag */
-  for(let tag of articleTagsArray){
-    console.log(tag);
+    /* START LOOP: for each tag */
+    for(let tag of articleTagsArray){
+      console.log(tag);
 
-    /* generate HTML of the link */
-    const linkHTML = '<li><a href="#' + articleTags + '">' + titleList + '</a></li>';
-    console.log(linkHTML);
+      /* generate HTML of the link */
+      const linkHTML = '<li><a href="#' + articleTags + '">' + titleList + '</a></li>';
+      console.log(linkHTML);
 
-    /* add generated code to html variable */
+      /* add generated code to html variable */
+      html = html + linkHTML;
+      console.log(html);
+
+    /* END LOOP: for each tag */
+    }
+    /* insert HTML of all the links into the tags wrapper */
     html = html + linkHTML;
     console.log(html);
 
-    /* END LOOP: for each tag */
-  }
-  /* insert HTML of all the links into the tags wrapper */
-  html = html + linkHTML;
-  console.log(html);
-
   /* END LOOP: for every article: */
-
+  }
 }
 
 generateTags();
