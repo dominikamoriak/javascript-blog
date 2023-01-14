@@ -115,15 +115,17 @@ function generateTags(){
     console.log(tag);
 
     /* generate HTML of the link */
+    const linkHTML = '<li><a href="#' + articleTags + '">' + titleList + '</a></li>';
+    console.log(linkHTML);
 
     /* add generated code to html variable */
 
     /* END LOOP: for each tag */
-
-    /* insert HTML of all the links into the tags wrapper */
+  }
+  /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
-  }
+
 }
 
 generateTags();
