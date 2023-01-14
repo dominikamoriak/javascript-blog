@@ -119,6 +119,8 @@ function generateTags(){
     console.log(linkHTML);
 
     /* add generated code to html variable */
+    html = html + linkHTML;
+    console.log(html);
 
     /* END LOOP: for each tag */
   }
