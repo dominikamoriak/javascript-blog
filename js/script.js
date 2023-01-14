@@ -153,7 +153,7 @@ function tagClickHandler(event){
 
   /* find all tag links with class active */
   const activeTagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
-  console.log (activeTagLinks);
+  console.log(activeTagLinks);
 
   /* START LOOP: for each active tag link */
   for(let activeTagLink of activeTagLinks){
@@ -179,17 +179,20 @@ function tagClickHandler(event){
   }
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[data-tags~="' + tag + '"]');
-
 }
 
 function addClickListenersToTags(){
   /* find all links to tags */
+  const tagLinks = document.querySelectorAll('href');
+  console.log(tagLinks);
 
   /* START LOOP: for each link */
+  for(let tagLink of tagLinks){
+    console.log(tagLink);
 
-  /* add tagClickHandler as event listener for that link */
+    /* add tagClickHandler as event listener for that link */
 
   /* END LOOP: for each link */
 }
-
+}
 addClickListenersToTags();
