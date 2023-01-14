@@ -129,8 +129,11 @@ function generateTags(){
     console.log(tag);
   }
   /* insert HTML of all the links into the tags wrapper */
+  html = html + linkHTML;
+  console.log(html);
 
   /* END LOOP: for every article: */
+
 
 }
 
