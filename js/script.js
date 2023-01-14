@@ -111,16 +111,19 @@ function generateTags(){
     console.log(articleTagsArray);
   }
   /* START LOOP: for each tag */
+  for(let tag of articleTagsArray){
+    console.log(tag);
 
-  /* generate HTML of the link */
+    /* generate HTML of the link */
 
-  /* add generated code to html variable */
+    /* add generated code to html variable */
 
-  /* END LOOP: for each tag */
+    /* END LOOP: for each tag */
 
-  /* insert HTML of all the links into the tags wrapper */
+    /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+  }
 }
 
 generateTags();
