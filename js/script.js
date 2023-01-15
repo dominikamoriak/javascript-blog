@@ -189,6 +189,7 @@ function addClickListenersToTags(){
     console.log(tagLink);
 
     /* add tagClickHandler as event listener for that link */
+    tagLinks.addEventListener('click', tagClickHandler);
 
   /* END LOOP: for each link */
   }
