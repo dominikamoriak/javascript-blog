@@ -226,3 +226,8 @@ function generateAuthors(){
   titleList.innerHTML = html;
 }
 generateAuthors();
+
+function addClickListenersToAuthors(){
+
+
+}
