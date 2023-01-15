@@ -203,6 +203,25 @@ addClickListenersToTags();
 function generateAuthors(){
 
   /* find all articles */
-  const articles = document.querySelectorAll(optArticleAuthorSelector);
+  const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);
+
+  /* START LOOP: for every article: */
+  for(let article of articles){
+
+    /* find authors wrapper */
+    const titleList = article.querySelectorAll(optArticleAuthorSelector);
+    console.log(titleList);
+
+    /* make html variable with empty string */
+    let html = '';
+
+    /* get authors from data-author attribute */
+    const articleAuthor = article.getAttribute('data-author');
+    console.log(articleAuthor);
+
+    /* END LOOP: for each tag */
+  }
+  /* insert HTML of all the links into the tags wrapper */
+  titleList.innerHTML = html;
 }
