@@ -42,7 +42,8 @@ function titleClickHandler(event){
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author';
 
 function generateTitleLinks(customSelector = ''){
   console.log(generateTitleLinks);
@@ -198,3 +199,10 @@ function addClickListenersToTags(){
   }
 }
 addClickListenersToTags();
+
+function generateAuthors(){
+
+  /* find all articles */
+  const articles = document.querySelectorAll(optArticleAuthorSelector);
+  console.log(articles);
+}
