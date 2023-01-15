@@ -92,7 +92,6 @@ function generateTags(){
   console.log(articles);
 
   /* START LOOP: for every article: */
-  const article = document.querySelectorAll(optArticleSelector);
   for(let article of articles){
 
     /* find tags wrapper */
@@ -125,8 +124,7 @@ function generateTags(){
     /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
-    html = html + linkHTML;
-    console.log(html);
+    titleList.innerHTML = html;
 
   /* END LOOP: for every article: */
   }
@@ -193,6 +191,6 @@ function addClickListenersToTags(){
     /* add tagClickHandler as event listener for that link */
 
   /* END LOOP: for each link */
-}
+  }
 }
 addClickListenersToTags();
