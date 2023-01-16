@@ -248,6 +248,11 @@ function authorClickHandler(event){
 
   /* END LOOP: for each active tag link */
   }
+
+  /* add class 'active' to the clicked link */
+  console.log('clickedElement:', clickedElement);
+  clickedElement.classList.add('active');
+
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[post-author="','"]');
 }
