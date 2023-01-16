@@ -235,6 +235,19 @@ function authorClickHandler(event){
   console.log('Tag was clicked!');
   console.log(event);
 
+  /* find all authors links with class active */
+  const activeAuthorLinks = document.querySelector(optArticleAuthorSelector);
+  console.log(activeAuthorLinks);
+
+  /* START LOOP: for each active author link */
+  for(let activeAuthorLink of activeAuthorLinks){
+    console.log(activeAuthorLink);
+
+    /* remove class active */
+    activeAuthorLink.classList.remove('active');
+
+  /* END LOOP: for each active tag link */
+  }
 }
 
 function addClickListenersToAuthors(){
