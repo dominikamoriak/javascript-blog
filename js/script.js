@@ -142,7 +142,7 @@ function generateTags(){
     const tagList = document.querySelector(optTagsListSelector);
 
     /* [NEW] add html from allTags to tagList */
-    tagList.innerHTML = allTags.join(' ');
+    // tagList.innerHTML = allTags.join(' ');
   }
 }
 
@@ -222,15 +222,15 @@ function generateAuthors(){
   for(let article of articles){
 
     /* find authors wrapper */
-    const titleList = article.querySelectorAll(optArticleAuthorSelector);
+    const titleList = article.querySelector(optArticleAuthorSelector);
     console.log(titleList);
-
-    /* make html variable with empty string */
-    let html = '';
 
     /* get authors from data-author attribute */
     const articleAuthor = article.getAttribute('data-author');
     console.log(articleAuthor);
+
+    /* make html variable */
+    let html = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
 
     /* insert HTML of all the links into the authors wrapper */
     titleList.innerHTML = html;
@@ -249,8 +249,16 @@ function authorClickHandler(event){
   console.log('Tag was clicked!');
   console.log(event);
 
+  /* make a new constant "href" and read the attribute "href" of the clicked element */
+  const href = clickedElement.getAttribute('href');
+  console.log(href);
+
+  /* make a new constant "author" and extract tag from the "href" constant */
+  const author = href.replace('#author-', '');
+  console.log(author);
+
   /* find all authors links with class active */
-  const activeAuthorLinks = document.querySelector(optArticleAuthorSelector);
+  const activeAuthorLinks = document.querySelectorAll('a.active[href^="#author-"]');
   console.log(activeAuthorLinks);
 
   /* START LOOP: for each active author link */
@@ -268,12 +276,12 @@ function authorClickHandler(event){
   clickedElement.classList.add('active');
 
   /* execute function "generateTitleLinks" with article selector as argument */
-  generateTitleLinks('[post-author="','"]');
+  generateTitleLinks('[data-author="' + author + '"]');
 }
 
 function addClickListenersToAuthors(){
   /* find all links to authors */
-  const authorLinks = document.querySelectorAll(optArticleAuthorSelector);
+  const authorLinks = document.querySelectorAll('[href^="#author-"]');
   console.log(authorLinks);
 
   /* START LOOP: for each link */
