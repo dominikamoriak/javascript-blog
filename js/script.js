@@ -248,6 +248,8 @@ function authorClickHandler(event){
 
   /* END LOOP: for each active tag link */
   }
+  /* execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('[post-author="','"]');
 }
 
 function addClickListenersToAuthors(){
