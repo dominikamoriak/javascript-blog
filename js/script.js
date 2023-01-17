@@ -90,6 +90,17 @@ generateTitleLinks();
 
 function calculateTagsParams (){
   const params = {max:0, min:999999};
+  console.log('params:', params);
+
+  for(let tag in tags){
+    console.log(tag + ' is used ' + tags[tag] + ' times');
+    if(tags[tag] > params.max){
+      params.max = tags[tag];
+      if(tags[tag] > params.min){
+        params.max = tags[tag];
+      }
+    }
+  }
 
   return params;
 }
