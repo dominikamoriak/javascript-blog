@@ -130,20 +130,19 @@ function generateTags(){
       if(allTags.indexOf(linkHTML) == -1){
         /* [NEW] add generated code to allTags array */
         allTags.push(linkHTML);
-
-      /* END LOOP: for each tag */
       }
-      /* insert HTML of all the links into the tags wrapper */
-      titleList.innerHTML = html;
+      /* END LOOP: for each tag */
+    }
+    /* insert HTML of all the links into the tags wrapper */
+    titleList.innerHTML = html;
 
     /* END LOOP: for every article: */
-    }
-    /* [NEW] find list of tags in right column */
-    const tagList = document.querySelector(optTagsListSelector);
-
-    /* [NEW] add html from allTags to tagList */
-    // tagList.innerHTML = allTags.join(' ');
   }
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector(optTagsListSelector);
+
+  /* [NEW] add html from allTags to tagList */
+  tagList.innerHTML = allTags.join(' ');
 }
 
 generateTags();
