@@ -93,19 +93,19 @@ function calculateTagsParams (){
   console.log('params:', params);
 
   const tags = document.querySelectorAll(optTagsListSelector);
+  console.log(tags);
 
   for(let tag in tags){
     console.log(tag + ' is used ' + tags[tag] + ' times');
     if(tags[tag] > params.max){
       params.max = tags[tag];
-      if(tags[tag] > params.min){
-        params.max = tags[tag];
-      }
+    } else { (tags[tag] < params.min);
+      params.max = tags[tag];
     }
   }
-
   return params;
 }
+
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
@@ -176,7 +176,7 @@ function generateTags(){
     const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '('+ allTags[tag] + ')'+'</a></li>';
     console.log(linkHTML);
 
-    allTagsHTML += tag + '('+ allTags[tag] + ')';
+    allTagsHTML = allTagsHTML += tag + '('+ allTags[tag] + ')' + linkHTML;
     console.log(allTagsHTML);
   }
   /* [NEW] END LOOP: for each tag in allTags: */
