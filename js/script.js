@@ -109,6 +109,8 @@ function calculateTagsParams (){
 }
 
 function calculateTagClass(count,params){
+  let allTags = '';
+
   const tagLinkHTML = '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
   console.log('tagLinkHTML:', tagLinkHTML);
 
