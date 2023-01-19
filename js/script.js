@@ -44,7 +44,9 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags .list';
+  optTagsListSelector = '.tags.list',
+  optCloudClassCount = '5',
+  optCloudClassPrefix = 'tag-size-';
 
 function generateTitleLinks(customSelector = ''){
   console.log(generateTitleLinks);
@@ -106,6 +108,10 @@ function calculateTagsParams (){
   return params;
 }
 
+function calculateTagClass(){
+  const tagLinkHTML = '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
+  console.log('tagLinkHTML:', tagLinkHTML);
+}
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
@@ -160,7 +166,7 @@ function generateTags(){
     /* END LOOP: for every article: */
   }
   /* [NEW] find list of tags in right column */
-  const tagList = document.querySelectorAll(optTagsListSelector);
+  const tagList = document.querySelector(optTagsListSelector);
 
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
