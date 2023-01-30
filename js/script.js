@@ -111,7 +111,7 @@ function calculateTagsParams (){
 function calculateTagClass(count,params){
   let allTags = '';
 
-  const tagLinkHTML = '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
+  const tagLinkHTML = '<li>' + calculateTagClass(count, tagsParams) + '</li>';
   console.log('tagLinkHTML:', tagLinkHTML);
 
   const normalizedCount = count - params.min;
@@ -119,9 +119,8 @@ function calculateTagClass(count,params){
   const percentage = normalizedCount / normalizedMax;
   const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1 );
 
-  return optCloudClassPrefix, classNumber;
+  return optCloudClassPrefix + count; // 'tag-size-5'
 }
-calculateTagClass();
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
@@ -162,7 +161,7 @@ function generateTags(){
       console.log(html);
 
       /* [NEW] check if this link is NOT already in allTags */
-      if(!allTags.hasOwnProperty(tag)){
+      if(!allTags.hasOwnProperty[tag]){
         /* [NEW] add tag to allTags object */
         allTags[tag] = 1;
       } else {
@@ -189,12 +188,11 @@ function generateTags(){
   for(let tag in allTags){
 
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '('+ allTags[tag] + ')'+'</a></li>';
+    const className = calculateTagClass(allTags[tag], tagsParams);
+    const linkHTML = '<li><a href="#tag-' + tag + '" class="'+ className + '"'>' + tag + ' ('+ allTags[tag] + ') + '</a></li>';
     console.log(linkHTML);
 
-    let tagLinkHTML = '';
-
-    allTagsHTML += tagLinkHTML;
+    allTagsHTML += linkHTML;
     console.log(allTagsHTML);
   }
   /* [NEW] END LOOP: for each tag in allTags: */
