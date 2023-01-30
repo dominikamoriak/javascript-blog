@@ -60,6 +60,7 @@ function generateTitleLinks(customSelector = ''){
 
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
   console.log(articles);
+  console.log(customSelector);
 
   for(let article of articles){
 
