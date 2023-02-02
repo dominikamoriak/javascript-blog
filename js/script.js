@@ -91,25 +91,22 @@ function generateTitleLinks(customSelector = ''){
 
 generateTitleLinks();
 
-function calculateTagsParams (){
+function calculateTagsParams (tags){
   const params = {max:0, min:999999};
   console.log('params:', params);
-
-  const tags = document.querySelectorAll(optTagsListSelector);
-  console.log(tags);
 
   for(let tag in tags){
     console.log(tag + ' is used ' + tags[tag] + ' times');
     if(tags[tag] > params.max){
       params.max = tags[tag];
     } else { (tags[tag] < params.min);
-      params.max = tags[tag];
+      params.min = tags[tag];
     }
   }
   return params;
 }
 
-function calculateTagClass(count,params){
+function calculateTagClass(count, params){
   let allTags = '';
 
   const tagLinkHTML = '<li>' + calculateTagClass(count, tagsParams) + '</li>';
