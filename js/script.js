@@ -176,7 +176,7 @@ function generateTags(){
       console.log(html);
 
       /* [NEW] check if this link is NOT already in allTags */
-      if(!allTags.hasOwnProperty[tag]){
+      if(!allTags.hasOwnProperty(tag)){
         /* [NEW] add tag to allTags object */
         allTags[tag] = 1;
       } else {
