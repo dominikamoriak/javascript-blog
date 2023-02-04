@@ -92,30 +92,47 @@ function generateTitleLinks(customSelector = ''){
 generateTitleLinks();
 
 function calculateTagsParams (tags){
+
+  /* create a new const params, max 0, min 999 999 */
   const params = {max:0, min:999999};
   console.log('params:', params);
 
+  /* START LOOP: for every tag */
   for(let tag in tags){
     console.log(tag + ' is used ' + tags[tag] + ' times');
+
+    /* check if these tags are larger than params.max */
     if(tags[tag] > params.max){
       params.max = tags[tag];
+
+    /* check if these tags are smaller than params.min */
     } else { (tags[tag] < params.min);
       params.min = tags[tag];
     }
   }
+
+  /* END LOOP */
+
   return params;
 }
 
 function calculateTagClass(count, params){
-  let allTags = '';
 
-  const tagLinkHTML = '<li>' + calculateTagClass(count, tagsParams) + '</li>';
-  console.log('tagLinkHTML:', tagLinkHTML);
-
+  /* create a new const with normalizedCount and subtract count from params.min */
   const normalizedCount = count - params.min;
+  console.log(normalizedCount);
+
+  /* create a new const with normalizedMax and subtract params.max from params.min */
   const normalizedMax = params.max - params.min;
+  console.log(normalizedMax);
+
+  /* create a new const percentage and split normalizedCount by normalizedMax */
   const percentage = normalizedCount / normalizedMax;
-  const classNumber = Math.floor( percentage * (optCloudClassCount - 1) + 1 );
+  console.log(percentage);
+
+  /* create a new const classNumber with Math.floor */
+  const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1 );
+  console.log(classNumber);
 
   return optCloudClassPrefix + classNumber; // 'tag-size-5'
 }
@@ -187,9 +204,9 @@ function generateTags(){
 
     /* [NEW] generate code of a link and add it to allTagsHTML */
     const className = calculateTagClass(allTags[tag], tagsParams);
-    console.log (className);
+    console.log ('className:', className);
     const linkHTML = '<li><a href="#tag-' + tag + '" class="'+ className + '">' + tag + '(' + allTags[tag] + ')' + '</a></li>';
-    console.log(linkHTML);
+    console.log('linkHTML:', linkHTML);
 
     allTagsHTML += linkHTML;
     console.log(allTagsHTML);
