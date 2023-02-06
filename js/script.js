@@ -134,7 +134,7 @@ function calculateTagClass(count, params){
   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1 );
   console.log(classNumber);
 
-  return optCloudClassPrefix + classNumber; // 'tag-size-5'
+  return optCloudClassPrefix + classNumber; // np. 'tag-size-5'
 }
 
 function generateTags(){
