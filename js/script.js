@@ -300,29 +300,24 @@ function generateAuthors(){
     const titleList = article.querySelector(optArticleAuthorSelector);
     console.log(titleList);
 
-    /* make html variable */
-    let html = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
-    console.log(html);
-
     /* get authors from data-author attribute */
     const articleAuthor = article.getAttribute('data-author');
     console.log(articleAuthor);
 
-    /* split authors into array */
-    const articleAuthorsArray = articleAuthor.split(' ');
-    console.log(articleAuthorsArray);
+    /* make html variable */
+    let html = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
+    console.log(html);
 
     /* [NEW] check if this link is NOT already in allAuthors */
-    if(!allAuthors.hasOwnProperty(author)){
+    if(!allAuthors.hasOwnProperty(articleAuthor)){
       /* [NEW] add author to allAuthors object */
-      allAuthors[author] = 1;
+      allAuthors[articleAuthor] = 1;
     }
-    /* END LOOP: for each tag */
 
     /* insert HTML of all the links into the authors wrapper */
     titleList.innerHTML = html;
 
-    /* END LOOP: for each tag */
+    /* END LOOP: for every article */
   }
   /* [NEW] find list of authors in right column */
   const authorList = document.querySelector(optAuthorsListSelector);
@@ -330,7 +325,6 @@ function generateAuthors(){
 
   /* [NEW] create variable for all links HTML code */
   let allAuthorsHTML = '';
-  console.log(allAuthorsHTML);
 
   /* [NEW] START LOOP: for each author in allAuthors */
   for(let author in allAuthors){
@@ -344,7 +338,7 @@ function generateAuthors(){
   }
   /* [NEW] END LOOP: for each author in allAuthors: */
 
-  /* [NEW] add html from allAuthorsHTML to authorlist */
+  /* [NEW] add html from allAuthorsHTML to authorslist */
   authorList.innerHTML = allAuthorsHTML;
 }
 
