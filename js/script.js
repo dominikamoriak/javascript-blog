@@ -286,6 +286,9 @@ addClickListenersToTags();
 
 function generateAuthors(){
 
+  /* [NEW] create a new variable allAuthors with an empty object */
+  let allAuthors = {};
+
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);
@@ -303,6 +306,13 @@ function generateAuthors(){
 
     /* make html variable */
     let html = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
+
+    /* [NEW] check if this link is NOT already in allTags */
+    if(!allAuthors.hasOwnProperty(author)){
+      /* [NEW] add tag to allTags object */
+      allAuthors[author] = 1;
+    }
+    /* END LOOP: for each tag */
 
     /* insert HTML of all the links into the authors wrapper */
     titleList.innerHTML = html;
