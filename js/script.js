@@ -307,9 +307,9 @@ function generateAuthors(){
     /* make html variable */
     let html = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
 
-    /* [NEW] check if this link is NOT already in allTags */
+    /* [NEW] check if this link is NOT already in allAuthors */
     if(!allAuthors.hasOwnProperty(author)){
-      /* [NEW] add tag to allTags object */
+      /* [NEW] add author to allAuthors object */
       allAuthors[author] = 1;
     }
     /* END LOOP: for each tag */
