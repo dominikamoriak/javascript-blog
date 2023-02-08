@@ -313,7 +313,6 @@ function generateAuthors(){
       /* [NEW] add author to allAuthors object */
       allAuthors[articleAuthor] = 1;
     }
-
     /* insert HTML of all the links into the authors wrapper */
     titleList.innerHTML = html;
 
@@ -330,7 +329,7 @@ function generateAuthors(){
   for(let author in allAuthors){
 
     /* [NEW] generate code of a link and add it to allAuthorsHTML */
-    const linkHTML = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
+    const linkHTML = '<li><a href="#author-' + author + '">' + author + '</a></li>';
     console.log('linkHTML:', linkHTML);
 
     allAuthorsHTML += linkHTML;
