@@ -1,8 +1,11 @@
 'use strict';
 
+/* global Handlebars */
+
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
   tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
 };
 
 const optArticleSelector = '.post',
@@ -313,8 +316,10 @@ function generateAuthors(){
     console.log(articleAuthor);
 
     /* make html variable */
-    let html = '<li><a href="#author-' + articleAuthor + '">' + articleAuthor + '</a></li>';
-    console.log(html);
+    let linkHTMLData = {author: articleAuthor};
+    console.log(linkHTMLData);
+    let linkHTML = templates.authorLink(linkHTMLData);
+    console.log(linkHTML);
 
     /* [NEW] check if this link is NOT already in allAuthors */
     if(!allAuthors.hasOwnProperty(articleAuthor)){
