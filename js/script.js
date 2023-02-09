@@ -178,7 +178,7 @@ function generateTags(){
       console.log(tag);
 
       /* generate HTML of the link */
-      const linkHTMLData = {tag: articleTags};
+      const linkHTMLData = {tag: tag};
       console.log(linkHTMLData);
       const linkHTML = templates.tagLink(linkHTMLData);
       console.log(linkHTML);
