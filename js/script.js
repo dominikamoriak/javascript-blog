@@ -178,7 +178,7 @@ function generateTags(){
       console.log(tag);
 
       /* generate HTML of the link */
-      const linkHTMLData = {tags: articleTags};
+      const linkHTMLData = {tag: articleTags};
       console.log(linkHTMLData);
       const linkHTML = templates.tagLink(linkHTMLData);
       console.log(linkHTML);
@@ -327,7 +327,7 @@ function generateAuthors(){
       allAuthors[articleAuthor] = 1;
     }
     /* insert HTML of all the links into the authors wrapper */
-    titleList.innerHTML = html;
+    titleList.innerHTML = linkHTML;
 
     /* END LOOP: for every article */
   }
