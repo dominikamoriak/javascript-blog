@@ -1,9 +1,9 @@
 'use strict';
 
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
-  articleTag: Handlebars.compile(document.querySelector('#template-article-tag').innerHTML)
-}
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+};
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -78,7 +78,7 @@ function generateTitleLinks(customSelector = ''){
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* create HTML of the link */
-    const linkHTMLData = {id:articleId, title: articleTitle};
+    const linkHTMLData = {id: articleId, title: articleTitle};
     const linkHTML = templates.articleLink(linkHTMLData);
     console.log(linkHTML);
 
@@ -175,8 +175,9 @@ function generateTags(){
       console.log(tag);
 
       /* generate HTML of the link */
-      const linkHTMLData = {tag: tag, tag:tag};
-      const linkHTML = templates.articleTag(linkHTMLData);
+      const linkHTMLData = {tags: articleTags};
+      console.log(linkHTMLData);
+      const linkHTML = templates.tagLink(linkHTMLData);
       console.log(linkHTML);
 
       /* add generated code to html variable */
