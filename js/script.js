@@ -7,6 +7,7 @@ const templates = {
   tagLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
   authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
   tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
+  authorRightColumnLink: Handlebars.compile(document.querySelector('#template-author-right-column-link').innerHTML),
 };
 
 const optArticleSelector = '.post',
@@ -336,22 +337,21 @@ function generateAuthors(){
   console.log(authorList);
 
   /* [NEW] create variable for all links HTML code */
-  let allAuthorsHTML = '';
+  const allAuthorsData = {authors: []};
 
   /* [NEW] START LOOP: for each author in allAuthors */
   for(let author in allAuthors){
 
     /* [NEW] generate code of a link and add it to allAuthorsHTML */
-    const linkHTML = '<li><a href="#author-' + author + '">' + author + '</a></li>';
-    console.log('linkHTML:', linkHTML);
-
-    allAuthorsHTML += linkHTML;
-    console.log(allAuthorsHTML);
+    allAuthorsData.authors.push({
+      author: author
+    });
   }
   /* [NEW] END LOOP: for each author in allAuthors: */
 
   /* [NEW] add html from allAuthorsHTML to authorslist */
-  authorList.innerHTML = allAuthorsHTML;
+  authorList.innerHTML = templates.authorRightColumnLink(allAuthorsData);
+  console.log(allAuthorsData);
 }
 
 generateAuthors();
